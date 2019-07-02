@@ -1,0 +1,31 @@
+scala-chaoren/out
+spark-chaoren/out
+target
+tmp
+.history
+dist
+bower_components
+node_modules
+.idea
+.tmp
+
+*.iml
+/out
+.idea_modules
+.classpath
+.project
+/RUNNING_PID
+.settings
+.sass-cache
+scalajvm/upload/*
+
+# temp files
+.~*
+*~
+*.orig
+
+# OSX
+.DS_Store
+
+# PGP keys
+secring.gpg
