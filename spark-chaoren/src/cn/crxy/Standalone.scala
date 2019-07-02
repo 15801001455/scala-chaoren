@@ -15,7 +15,7 @@ object Standalone {
     }
     
     val conf = new SparkConf()                          //构造SparkConf对象
-    conf.setSparkHome("/opt/spark-1.4.0-bin-hadoop2.6")  //spark的安装目录
+    conf.setSparkHome("/opt/software/spark-2.4")  //spark的安装目录
     conf.setMaster("spark://docker:7077")              //spark master url
     conf.setAppName("StandaloneSpark")                  //app名称
     conf.set("SPARK_EXECUTOR_MEMORY", "2g")             //配置spark executor内存
