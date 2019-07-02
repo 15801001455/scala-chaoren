@@ -1,5 +1,7 @@
 scala-chaoren/out
+scala-chaoren/.idea
 spark-chaoren/out
+spark-chaoren/.idea
 target
 tmp
 .history
