@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fe0e05d2-f836-47e1-aadd-22c12dd683fe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../spark-chaoren/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spark-chaoren/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spark-chaoren/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spark-chaoren/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spark-chaoren/spark-chaoren.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../spark-chaoren/spark-chaoren.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spark-chaoren/src/cn/crxy/Standalone.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../spark-chaoren/src/cn/crxy/Standalone.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spark-chaoren/src/测试spark函数/Aggregate测试.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../spark-chaoren/src/测试spark函数/Aggregate测试.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

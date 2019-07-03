@@ -4,9 +4,8 @@
     <list default="true" id="afa9da0c-34fc-41df-ac84-29cfa2e08ba6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../scala-chaoren/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../scala-chaoren/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spark-chaoren.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-chaoren.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cn/crxy/Standalone.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/cn/crxy/Standalone.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/测试spark函数/Aggregate测试.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/测试spark函数/Aggregate测试.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/crxy/Standalone.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="210">
+              <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="45" />
               <folding>
                 <element signature="e#17#50#0" expanded="true" />
               </folding>
@@ -34,11 +33,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/测试spark函数/Aggregate测试.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="180">
+              <caret line="18" column="35" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/测试spark函数/aggregateByKey测试.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/测试spark函数/单词计数.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -46,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+            <state relative-caret-position="-330">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -60,9 +77,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/测试spark函数/Aggregate测试.scala" />
         <option value="$PROJECT_DIR$/src/cn/crxy/Standalone.scala" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/测试spark函数/Aggregate测试.scala" />
+        <option value="$PROJECT_DIR$/src/测试spark函数/aggregateByKey测试.scala" />
+        <option value="$PROJECT_DIR$/src/测试spark函数/单词计数.scala" />
       </list>
     </option>
   </component>
@@ -100,6 +119,12 @@
               <item name="spark-chaoren" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="spark-chaoren" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spark-chaoren" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="测试spark函数" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -128,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.aggregateByKey测试">
     <configuration name="Aggregate测试" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="测试spark函数.Aggregate测试" />
       <module name="spark-chaoren" />
@@ -142,8 +167,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="aggregateByKey测试" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="测试spark函数.aggregateByKey测试" />
+      <module name="spark-chaoren" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="测试spark函数.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.aggregateByKey测试" />
         <item itemvalue="Application.Aggregate测试" />
       </list>
     </recent_temporary>
@@ -165,7 +204,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1130064" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1130064" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -177,7 +216,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.23356009" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32939914" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4635193" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -199,15 +238,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+        <state relative-caret-position="-330">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/crxy/Standalone.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="45" />
           <folding>
             <element signature="e#17#50#0" expanded="true" />
           </folding>
@@ -216,8 +255,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/测试spark函数/Aggregate测试.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="180">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/测试spark函数/aggregateByKey测试.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/测试spark函数/单词计数.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
         </state>
       </provider>
     </entry>
