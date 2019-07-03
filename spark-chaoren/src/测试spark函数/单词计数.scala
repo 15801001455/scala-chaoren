@@ -1,5 +1,7 @@
 package 测试spark函数
 
+import org.apache.spark.{SparkConf, SparkContext}
+
 /**
   * 完整版:
   *   val rdd2 = sc.textFile("/opt/sparktest/a.txt").flatMap(line => line.split(",")).map(line => (line,1)).reduceByKey(_ + _).collect
@@ -15,7 +17,17 @@ package 测试spark函数
 object 单词计数 {
   def main(args: Array[String]): Unit = {
 
-
+    val conf = new SparkConf()
+    conf.setMaster("local")
+    conf.setAppName("LocalSpark")
+    val sc = new SparkContext(conf)
+    val array = sc.textFile("G:\\sparktest\\a.txt").flatMap(_.split(",")).map((_,1)).reduceByKey(_ + _).collect()
+    println(array.getClass.getSimpleName)
+    array.length
+    for(i <- 0 until array.length){
+      val t = array(i)
+      println(t._1 + "," + t._2)
+    }
 
   }
 }
