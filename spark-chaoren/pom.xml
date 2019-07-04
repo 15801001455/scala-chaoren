@@ -30,8 +30,6 @@
     <build>
         <sourceDirectory>src/</sourceDirectory>
         <!--
-        <testSourceDirectory>src/test/</testSourceDirectory>
-        -->
         <plugins>
             <plugin>
                 <groupId>org.scala-tools</groupId>
@@ -45,7 +43,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <scalaVersion>2.12.8</scalaVersion>
+                    <scalaVersion>2.11.12</scalaVersion>
                 </configuration>
             </plugin>
 
@@ -87,13 +85,14 @@
                 </executions>
             </plugin>
         </plugins>
+        -->
     </build>
 
     <dependencies>
         <!--spark-->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.12</artifactId>
+            <artifactId>spark-core_2.11</artifactId>
             <version>2.4.3</version>
         </dependency>
 
