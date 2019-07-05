@@ -1,4 +1,4 @@
-package 测试spark函数
+package 常用函数测试
 
 import org.apache.spark.{SparkConf, SparkContext}
 

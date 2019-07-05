@@ -8,32 +8,35 @@
     <artifactId>testSpark</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <repositories>
-        <repository>
-            <id>Akka repository</id>
-            <url>http://repo.akka.io/releases</url>
-        </repository>
-        <repository>
-            <id>cloudera</id>
-            <url>https://repository.cloudera.com/artifactory/cloudera-repos/.</url>
-        </repository>
-        <repository>
-            <id>jboss</id>
-            <url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
-        </repository>
-        <repository>
-            <id>Sonatype snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
-
     <build>
-        <sourceDirectory>src/</sourceDirectory>
-        <!--
         <plugins>
+            <!--sourceDirectory 这个只能指定一个源文件目录，但是我们要指定多个源文件目录 src/main/java src/main/scala 所以
+            要使用一个插件 build-helper-maven-plugin  指定多个源代码目录、多个资源文件目录用build-helper-maven-plugin插件-->
             <plugin>
-                <groupId>org.scala-tools</groupId>
-                <artifactId>maven-scala-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/java</source>
+                                <source>src/main/scala</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--scala编译插件 我觉得这个插件没有用,因为build-helper-maven-plugin这个插件已经指定了需要编译的目录包括scala目录-->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>4.1.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -43,49 +46,36 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <scalaVersion>2.11.12</scalaVersion>
+                    <recompileMode>incremental</recompileMode>
                 </configuration>
             </plugin>
-
+            <!--java编译插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.2</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <id>compile</id>
+                        <phase>compile</phase>
                         <goals>
-                            <goal>shade</goal>
+                            <goal>compile</goal>
                         </goals>
-                        <configuration>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/*.SF</exclude>
-                                        <exclude>META-INF/*.DSA</exclude>
-                                        <exclude>META-INF/*.RSA</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-                            <transformers>
-
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                                    <resource>reference.conf</resource>
-                                </transformer>
-
-                                <transformer
-                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                </transformer>
-
-                            </transformers>
-                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-        -->
     </build>
 
     <dependencies>
@@ -95,7 +85,23 @@
             <artifactId>spark-core_2.11</artifactId>
             <version>2.4.3</version>
         </dependency>
+        <!--主要是让maven下载最新包，要不build-plugins总是找不到版本,一会下载完包注释掉就可以了 下面三个-->
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.alchim31.maven</groupId>
+            <artifactId>scala-maven-plugin</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
 
     </dependencies>
-
 </project>
