@@ -15,6 +15,11 @@ import org.apache.spark.{SparkConf, SparkContext}
   * def aggregateByKey[U](zeroValue: U, partitioner: Partitioner)(seqOp: (U, V) ⇒ U, combOp: (U, U) ⇒ U)(implicit arg0: ClassTag[U]): RDD[(K, U)]
   * // partitioner: Partitioner 分区器
   */
+/**
+  * dog,4
+  * cat,17
+  * mouse,3
+  */
 object aggregateByKey测试 {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf()
@@ -23,6 +28,8 @@ object aggregateByKey测试 {
     val sc = new SparkContext(conf)
     val pairRDD = sc.parallelize(List(("cat",2),("dog",4),("mouse",3),("cat",15)),2)
     val tuples = pairRDD.aggregateByKey(0)(math.max(_,_),_+_).collect()
-
+    for(t <- tuples){
+      println(t._1 + "," + t._2)
+    }
   }
 }
