@@ -1,0 +1,14 @@
+local模式：
+配置SPARK_HOME 和Path
+spark-shell命令开始练习吧(本机模式 local)
+val files = sc.textFile("D://sparktest//*")
+files.flatMap(_.split("\\t")).map(x => (x,1)).reduceByKey(_+_).collect  单词计数
+
+spark-shell --master local[3]  //代表本地三个线程运行
+
+
+
+val rdd1 = sc.parallelize(List(('a',1),('b',2),('c',3)))
+val rdd2 = sc.parallelize(List(('d',4),('e',5)))
+//repartition(1) 就好比MapReduce设置reduce为1个处理，会输出到一个文件,实际测试没成功，在linux上再试试吧
+(rdd1 union rdd2).repartition(1).saveAsTextFile("D:\\sparktest\\test1")
