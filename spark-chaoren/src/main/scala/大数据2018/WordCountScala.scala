@@ -1,4 +1,6 @@
-package com.it18zhang.spark.scala ;
+package 大数据2018
+
+;
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**

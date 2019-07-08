@@ -16,7 +16,7 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object 单词计数 {
   def main(args: Array[String]): Unit = {
-
+    //创建Spark配置对象
     val conf = new SparkConf()
     conf.setMaster("local")
     conf.setAppName("LocalSpark")

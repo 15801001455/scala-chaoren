@@ -1,26 +1,20 @@
+package 大数据2018
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   *
   */
-object UnionDemo1 {
+object DistinctDemo1 {
     def main(args: Array[String]): Unit = {
         val conf = new SparkConf()
         conf.setAppName("WordCountScala")
         conf.setMaster("local[4]") ;
         val sc = new SparkContext(conf)
         val rdd1 = sc.textFile("d:/scala/log.txt",4)
-        //所有error
-        val errorRDD = rdd1.filter(_.toLowerCase.contains("error"))
+        val rdd2 = rdd1.flatMap(_.split(" "))
+        val rdd3 = rdd2.distinct()
 
-        //所有warn行
-        val warnRDD = rdd1.filter(_.toLowerCase.contains("warn"));
-
-        val allRDD = errorRDD.union(warnRDD);
-
-        allRDD.collect().foreach(println)
-
-
-
+        rdd3.collect().foreach(println)
     }
 }
