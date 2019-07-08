@@ -13,8 +13,8 @@ object MapDemo1 {
         conf.setMaster("local[4]") ;
         val sc = new SparkContext(conf)
 
-        val rdd1 = sc.textFile("d:/scala/test.txt",4)
-        val rdd2 = rdd1.flatMap(_.split(" ")) ;
+        val rdd1 = sc.textFile("G:/sparktest/a.txt",4)
+        val rdd2 = rdd1.flatMap(_.split(",")) ;
         //val rdd3 = rdd2.map(word=>{println("start") ;val t = (word,1) ;println(t + " : end") ; t})
 //        val rdd3 = rdd2.mapPartitions(it=>{
 //            import scala.collection.mutable.ArrayBuffer ;

@@ -11,8 +11,8 @@ object SampleDemo1 {
         conf.setAppName("WordCountScala")
         conf.setMaster("local[4]") ;
         val sc = new SparkContext(conf)
-        val rdd1 = sc.textFile("d:/scala/test.txt",4)
-        val rdd2 = rdd1.flatMap(_.split(" "))
+        val rdd1 = sc.textFile("G:/sparktest/a.txt",4)
+        val rdd2 = rdd1.flatMap(_.split(","))
 
         val rdd3 = rdd2.sample(false,0.5)
         rdd3.collect().foreach(println)
