@@ -12,15 +12,15 @@ object JoinDemo1 {
         conf.setMaster("local[4]") ;
         //名单
         val sc = new SparkContext(conf)
-        val namesRDD1 = sc.textFile("d:/scala/names.txt");
+        val namesRDD1 = sc.textFile("G:/sparktest/names.txt");
         val namesRDD2 = namesRDD1.map(line=>{
-            var arr = line.split(" ")
+            var arr = line.split(",")
             (arr(0).toInt,arr(1))
         })
         //总成绩
-        val scoreRDD1 = sc.textFile("d:/scala/scores.txt");
+        val scoreRDD1 = sc.textFile("G:/sparktest/scores.txt");
         val scoreRDD2 = scoreRDD1.map(line => {
-            var arr = line.split(" ")
+            var arr = line.split(",")
             (arr(0).toInt, arr(1).toInt)
         })
 
