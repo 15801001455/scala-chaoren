@@ -3,9 +3,9 @@ package 大数据2018
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
-  *
+  * 笛卡尔积 就是给出所有组合可能 返回元组的集合
   */
-object cartesianDemo1 {
+object CartesianDemo1 {
     def main(args: Array[String]): Unit = {
         val conf = new SparkConf()
         conf.setAppName("WordCountScala")
@@ -15,6 +15,6 @@ object cartesianDemo1 {
         val rdd2 = sc.parallelize(Array("1234","3456","5678","7890"))
 
         val rdd = rdd1.cartesian(rdd2);
-        rdd.collect().foreach(t=>println(t))
+        rdd.collect().foreach(println)
     }
 }
