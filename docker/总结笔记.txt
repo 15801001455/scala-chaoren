@@ -1,0 +1,32 @@
+启动一个容器 ： docker run -it centos /bin/bash
+进入容器后：exit 退出容器
+查看容器进程 docker ps -a 发现exit了
+重新启动容器 docker start 容器名称
+进入重新启动的容器 docker attach 容器名称
+进入重新启动的容器 docker exec -it 容器名称 /bin/bash 然后exit 发现容器还在启动中(docker ps -a ),所以感觉docker exec命令比docker attach命令好,因为退出后不会退出容器
+
+dockerhub的用户名:手机号 密码：高级
+
+从容器创建本地镜像（就跟git命令 commit只会提交到本地一样）：
+docker commit -a "jinyuchuan" -m"submit container to image local" 26bed850d6f8 mycentos:V1
+解读：
+	-a 作者
+    -m 提示
+	26bed850d6f8 容器id
+	mycentos:V1  新的镜像的名称
+	
+用这个新生成的镜像看看能创建容器不
+docker run --name mycontainer -it mycentos:V1 /bin/bash 成功了
+
+下面把这个镜像放到dockerhub上给别人使用
+1)docker login
+2)docker push 15801001455/mycentos:V1  
+       其中jinyuchuan 是dockerhub的账号 mycentos:V1是镜像名字+版本号
+   发现不成功，原来要给要上传的镜像起一个别名,第三步骤
+3)docker tag 镜像id 15801001455/mycentos:V1
+4)继续docker push 15801001455/mycentos:V1 发现还是不成功
+     处理如下： 
+	    1)mv /root/.docker/config.json /root/.docker/config.json.bak
+		2)docker login 重新输入用户名和密码
+		3)docker push 15801001455/mycentos:V1
+	 
