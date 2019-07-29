@@ -1,0 +1,4 @@
+SpiderWather 应该单独部署,是用来监控爬虫项目是否挂了
+HttpProxyTest 使用HttpClient的高级用法
+LoginTest 爬虫中有时候会用到模拟登录(比如不登录不让爬虫),这个方法里面实现了,HttpProxyTest也有实现
+JsTest 解析本地或者网络的js文件通过java实现

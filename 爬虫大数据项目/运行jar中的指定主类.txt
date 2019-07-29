@@ -1,0 +1,2 @@
+java -jar xxx.jar
+java -cp xxx.jar xxx.com.xxxx

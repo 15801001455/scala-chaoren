@@ -1,0 +1,9 @@
+1）：把spider项目打成jar包放到多台服务器上启动，入口是spider类
+	需要启动多台，具体需要根据爬取的网站而定。
+	还需要部署一台服务器来启动spiderwatcher，入口类是spiderwatcher，监控爬虫的生命周期
+	还需要部署一台服务器来启动urlmanager，入口类是urlmanager，实现url调度
+	还需要部署一台服务器来启动solrindex，入口类是solrindex，对数据在solr中建立索引
+2）：redis使用三台服务器做主从，或者做集群也可以。
+3）：hbase使用三到五台服务器，做集群
+4）：solr使用三台服务器实现solrcloud，存储索引数据。
+5）：spider-web项目启动一个即可。
