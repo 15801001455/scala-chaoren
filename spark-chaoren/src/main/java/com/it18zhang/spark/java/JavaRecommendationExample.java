@@ -9,10 +9,9 @@ import org.apache.spark.mllib.recommendation.ALS;
 import org.apache.spark.mllib.recommendation.MatrixFactorizationModel;
 import org.apache.spark.mllib.recommendation.Rating;
 import org.apache.spark.SparkConf;
-// $example off$
 
 public class JavaRecommendationExample {
-  public static void main(String[] args) {
+  public static void main(String[] args) {/**
     // $example on$
     SparkConf conf = new SparkConf().setAppName("Recommender Example").setMaster("local[4]");
     JavaSparkContext jsc = new JavaSparkContext(conf);
@@ -83,6 +82,6 @@ public class JavaRecommendationExample {
       "target/tmp/myCollaborativeFilter");
     // $example off$
 
-    jsc.stop();
+    jsc.stop();*/
   }
 }

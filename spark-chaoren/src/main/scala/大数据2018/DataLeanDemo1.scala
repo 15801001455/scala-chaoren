@@ -1,9 +1,11 @@
+package 大数据2018
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.util.Random
 
 /**
-  *
+  * 这个例子还没看过
   */
 object DataLeanDemo1 {
     def main(args: Array[String]): Unit = {

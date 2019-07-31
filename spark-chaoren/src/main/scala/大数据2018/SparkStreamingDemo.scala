@@ -1,7 +1,9 @@
 /**
   * Created by Administrator on 2017/4/3.
   */
-package com.it18zhang.spark.streaming.demo ;
+package 大数据2018
+
+;
 import org.apache.spark._
 import org.apache.spark.streaming._
 import org.apache.spark.streaming.StreamingContext._

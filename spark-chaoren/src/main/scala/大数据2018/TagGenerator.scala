@@ -1,3 +1,5 @@
+package 大数据2018
+
 import com.it18zhang.spark.java.ReviewTags
 import org.apache.spark.{SparkConf, SparkContext}
 
