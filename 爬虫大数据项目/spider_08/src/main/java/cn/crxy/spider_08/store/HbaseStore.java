@@ -13,6 +13,7 @@ public class HbaseStore implements Storeable {
 	@Override
 	public void store(Page page) {
 		String goodsid = page.getGoodsid();
+		//update jyc 整个项目原理就是先爬虫，然后存hbase，同时redis存商品id，然后有个web项目通过solr搜索商品 这个solr_index的key是给spider_web项目的SolrIndex项目用的
 		redisUtils.add("solr_index", goodsid);
 		Map<String, String> map = page.getMap();
 		try{
