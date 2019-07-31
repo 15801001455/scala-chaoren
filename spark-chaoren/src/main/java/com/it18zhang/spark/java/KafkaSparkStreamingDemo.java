@@ -1,25 +1,27 @@
 package com.it18zhang.spark.java;
 
-import java.util.*;
-
-import org.apache.spark.SparkConf;
-import org.apache.spark.TaskContext;
-import org.apache.spark.api.java.*;
-import org.apache.spark.api.java.function.*;
-import org.apache.spark.streaming.Seconds;
-import org.apache.spark.streaming.api.java.*;
-import org.apache.spark.streaming.kafka010.*;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.function.FlatMapFunction;
+import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.api.java.function.PairFunction;
+import org.apache.spark.streaming.Seconds;
+import org.apache.spark.streaming.api.java.JavaDStream;
+import org.apache.spark.streaming.api.java.JavaInputDStream;
+import org.apache.spark.streaming.api.java.JavaPairDStream;
+import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import org.apache.spark.streaming.kafka.KafkaUtils;
 import scala.Tuple2;
+
+import java.util.*;
 
 /**
  */
 public class KafkaSparkStreamingDemo {
     public static void main(String[] args) throws InterruptedException {
 
-        SparkConf conf = new SparkConf();
+        /*SparkConf conf = new SparkConf();
         conf.setAppName("kafkaSpark");
         conf.setMaster("local[4]");
         //创建Spark流应用上下文
@@ -73,6 +75,6 @@ public class KafkaSparkStreamingDemo {
 
         streamingContext.start();
 
-        streamingContext.awaitTermination();
+        streamingContext.awaitTermination();*/
     }
 }
