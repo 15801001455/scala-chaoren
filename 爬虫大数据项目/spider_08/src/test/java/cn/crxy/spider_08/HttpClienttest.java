@@ -1,4 +1,4 @@
-package cn.crxy.spider;
+package cn.crxy.spider_08;
 
 import static org.junit.Assert.*;
 

@@ -26,4 +26,9 @@ public class DomainUtils {
 		}
 		return null;
 	}
+
+	public static void main(String[] args) {
+		String topDomain = getTopDomain("https://work.3385.com/v2/hrm/hrmresource/hrmResourceAct.do?method=toHrmResourceMain&mid=9");
+		System.out.println(topDomain);
+	}
 }
