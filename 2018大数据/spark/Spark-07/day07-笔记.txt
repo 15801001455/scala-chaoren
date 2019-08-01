@@ -8,7 +8,7 @@
 
 	非监督学习		//没有具有训练数据
 
-line regress
+linear regression
 -------------
 	衰退。
 
