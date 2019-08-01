@@ -1,4 +1,4 @@
-package cn.cxrx
+package scala基础语法.cn.cxrx
 
 /**
   * 类的定义 自定义getter和setter

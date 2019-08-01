@@ -1,4 +1,4 @@
-package cn.cxrx
+package scala基础语法.cn.cxrx
 
 object Test21 extends App{
   /*判断if*/

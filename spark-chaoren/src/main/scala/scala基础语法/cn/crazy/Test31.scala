@@ -1,4 +1,4 @@
-package cn.cxrxy
+package scala基础语法.cn.crazy
 
 import scala.collection.mutable.ArrayBuffer
 import java.util.ArrayList

@@ -1,4 +1,4 @@
-package cn.cxrx
+package scala基础语法.cn.cxrx
 
 /**
   * 对象 scala中没有java的静态字段和静态方法功能，通过对象实现
