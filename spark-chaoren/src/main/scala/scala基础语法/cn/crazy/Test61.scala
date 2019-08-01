@@ -1,4 +1,4 @@
-package cn.cxrxy
+package scala基础语法.cn.crazy
 
 /**
  * 高阶函数

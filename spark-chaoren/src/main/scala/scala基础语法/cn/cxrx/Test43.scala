@@ -1,4 +1,5 @@
-package cn.cxrx
+package scala基础语法.cn.cxrx
+
 /**
   * 类的构造器 记住一定把scala的类当成是方法来看待 后面可以加参数的
   * 记住一定把scala的类当成是方法来看待 就好理解scala的类了
