@@ -1,0 +1,37 @@
+#创建容器 并且后台运行 hostname为zhangsan  进入容器后可以通过cat /etc/hostname查看 VHOST目前不知道干什么的 后面两个参数是MQ的图形界面登录用户名和密码
+docker run -d --name rabbitmqContainer -p 5672:5672 -p 15672:15672 -v `pwd`/data:/var/lib/rabbitmq --hostname zhangsan -e RABBITMQ_DEFAULT_VHOST=my_vhost -eRABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin rabbitmq:management
+
+#界面访问容器
+http://192.168.232.101:15672
+
+进入容器
+docker exec -it rabbitmqContainer /bin/bash
+
+退出容器
+Ctrl+P+Q
+
+删除容器(删除的时候说容器正在运行，无法删除,通过docker stop停止容器)
+docker rm $(docker ps -a -q)
+
+停止容器
+docker stop dc32d5eb9bce
+
+实例代码用admin连接不上docker中的rabbitmq,
+网上找了一条命令试试:
+rabbitmqctl set_permissions -p / admin '.*' '.*' '.*'
+设置报错:Virtual host '/' does not exist
+然后查看都有哪些vhost虚拟主机:(https://blog.csdn.net/u013696226/article/details/21475253) rabbitmqctl list_vhosts
+发现有my_vhost 执行命令: rabbitmqctl set_permissions -p my_vhost admin '.*' '.*' '.*'
+
+什么是virtual host:
+像mysql有数据库的概念并且可以指定用户对库和表等操作的权限。那RabbitMQ呢？RabbitMQ也有类似的权限管理。
+在RabbitMQ中可以虚拟消息服务器VirtualHost，每个VirtualHost相当月一个相对独立的RabbitMQ服务器，每个VirtualHost之间是相互隔离的。exchange、queue、message不能互通。 相当于mysql的db。
+
+
+
+
+
+
+
+--spring.profiles.active=hello-world,receiver
+
