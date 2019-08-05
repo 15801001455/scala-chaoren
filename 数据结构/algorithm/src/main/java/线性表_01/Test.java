@@ -1,3 +1,4 @@
+package çº¿æ€§è¡¨_01;
 
 public class Test {
 
@@ -9,9 +10,9 @@ public class Test {
         SequenceList list = new SequenceList(100);
         try
         {
-        	list.insert(list.size, new Students("S0001","ÕÅÈı","ÄĞ",18));
-        	list.insert(list.size, new Students("S0002","ÀîËÄ","ÄĞ",19));
-        	list.insert(list.size, new Students("S0003","ÍõÎå","Å®",21));
+        	list.insert(list.size, new Students("S0001","å¼ ä¸‰","ç”·",18));
+        	list.insert(list.size, new Students("S0002","æå››","ç”·",19));
+        	list.insert(list.size, new Students("S0003","ç‹äº”","å¥³",21));
         	
         	for(int i=0;i<list.size;i++)
         	{

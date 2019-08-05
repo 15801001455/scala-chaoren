@@ -1,30 +1,32 @@
-//µ¥ÏòÁ´±íÀà
+package å•å‘é“¾è¡¨_02;
+
+//å•å‘é“¾è¡¨ç±»
 public class LinkList implements List {
 
-	Node head; //Í·Ö¸Õë
-	Node current;//µ±Ç°½áµã¶ÔÏó
-	int size;//½áµã¸öÊı
+	Node head; //å¤´æŒ‡é’ˆ
+	Node current;//å½“å‰ç»“ç‚¹å¯¹è±¡
+	int size;//ç»“ç‚¹ä¸ªæ•°
 	
-	//³õÊ¼»¯Ò»¸ö¿ÕÁ´±í
+	//åˆå§‹åŒ–ä¸€ä¸ªç©ºé“¾è¡¨
 	public LinkList()
 	{
-		//³õÊ¼»¯Í·½áµã£¬ÈÃÍ·Ö¸ÕëÖ¸ÏòÍ·½áµã¡£²¢ÇÒÈÃµ±Ç°½áµã¶ÔÏóµÈÓÚÍ·½áµã¡£
+		//åˆå§‹åŒ–å¤´ç»“ç‚¹ï¼Œè®©å¤´æŒ‡é’ˆæŒ‡å‘å¤´ç»“ç‚¹ã€‚å¹¶ä¸”è®©å½“å‰ç»“ç‚¹å¯¹è±¡ç­‰äºå¤´ç»“ç‚¹ã€‚
 		this.head = current = new Node(null);
-		this.size =0;//µ¥ÏòÁ´±í£¬³õÊ¼³¤¶ÈÎªÁã¡£
+		this.size =0;//å•å‘é“¾è¡¨ï¼Œåˆå§‹é•¿åº¦ä¸ºé›¶ã€‚
 	}
     
-	//¶¨Î»º¯Êı£¬ÊµÏÖµ±Ç°²Ù×÷¶ÔÏóµÄÇ°Ò»¸ö½áµã£¬Ò²¾ÍÊÇÈÃµ±Ç°½áµã¶ÔÏó¶¨Î»µ½Òª²Ù×÷½áµãµÄÇ°Ò»¸ö½áµã¡£
+	//å®šä½å‡½æ•°ï¼Œå®ç°å½“å‰æ“ä½œå¯¹è±¡çš„å‰ä¸€ä¸ªç»“ç‚¹ï¼Œä¹Ÿå°±æ˜¯è®©å½“å‰ç»“ç‚¹å¯¹è±¡å®šä½åˆ°è¦æ“ä½œç»“ç‚¹çš„å‰ä¸€ä¸ªç»“ç‚¹ã€‚
 	public void index(int index) throws Exception
 	{
 		if(index <-1 || index > size -1)
 		{
-		  throw new Exception("²ÎÊı´íÎó£¡");	
+		  throw new Exception("å‚æ•°é”™è¯¯ï¼");	
 		}
-		//ËµÃ÷ÔÚÍ·½áµãÖ®ºó²Ù×÷¡£
+		//è¯´æ˜åœ¨å¤´ç»“ç‚¹ä¹‹åæ“ä½œã€‚
 		if(index==-1)
 			return;
 		current = head.next;
-		int j=0;//Ñ­»·±äÁ¿
+		int j=0;//å¾ªç¯å˜é‡
 		while(current != null&&j<index)
 		{
 			current = current.next;
@@ -36,16 +38,16 @@ public class LinkList implements List {
 	@Override
 	public void delete(int index) throws Exception {
 		// TODO Auto-generated method stub
-		//ÅĞ¶ÏÁ´±íÊÇ·ñÎª¿Õ
+		//åˆ¤æ–­é“¾è¡¨æ˜¯å¦ä¸ºç©º
 		if(isEmpty())
 		{
-			throw new Exception("Á´±íÎª¿Õ£¬ÎŞ·¨É¾³ı£¡");
+			throw new Exception("é“¾è¡¨ä¸ºç©ºï¼Œæ— æ³•åˆ é™¤ï¼");
 		}
 		if(index <0 ||index >size)
 		{
-			throw new Exception("²ÎÊı´íÎó£¡");
+			throw new Exception("å‚æ•°é”™è¯¯ï¼");
 		}
-		index(index-1);//¶¨Î»µ½Òª²Ù×÷½áµãµÄÇ°Ò»¸ö½áµã¶ÔÏó¡£
+		index(index-1);//å®šä½åˆ°è¦æ“ä½œç»“ç‚¹çš„å‰ä¸€ä¸ªç»“ç‚¹å¯¹è±¡ã€‚
 		current.setNext(current.next.next);
 		size--;
 	}
@@ -55,7 +57,7 @@ public class LinkList implements List {
 		// TODO Auto-generated method stub
 		if(index <-1 || index >size-1)
 		{
-			throw new Exception("²ÎÊı·Ç·¨£¡");
+			throw new Exception("å‚æ•°éæ³•ï¼");
 		}
 		index(index);
 		
@@ -67,9 +69,9 @@ public class LinkList implements List {
 		// TODO Auto-generated method stub
 		if(index <0 ||index >size)
 		{
-			throw new Exception("²ÎÊı´íÎó£¡");
+			throw new Exception("å‚æ•°é”™è¯¯ï¼");
 		}
-		index(index-1);//¶¨Î»µ½Òª²Ù×÷½áµãµÄÇ°Ò»¸ö½áµã¶ÔÏó¡£
+		index(index-1);//å®šä½åˆ°è¦æ“ä½œç»“ç‚¹çš„å‰ä¸€ä¸ªç»“ç‚¹å¯¹è±¡ã€‚
 		current.setNext(new Node(obj,current.next));
 		size++;
 	}

@@ -1,3 +1,4 @@
+package å•å‘é“¾è¡¨_02;
 
 public class Test {
 
@@ -14,7 +15,7 @@ public class Test {
     	 System.out.print(temp+" ");
       }
       list.delete(4);
-      System.out.println("\n------É¾³ıµÚÎå¸öÔªËØÖ®ºó-------");
+      System.out.println("\n------åˆ é™¤ç¬¬äº”ä¸ªå…ƒç´ ä¹‹å-------");
 	  for(int i=0;i<list.size;i++)
 	  {
 		  System.out.print(list.get(i)+" ");

@@ -1,41 +1,43 @@
-//½áµãÀà
+package å•å‘é“¾è¡¨_02;
+
+//ç»“ç‚¹ç±»
 public class Node {
   
-	Object element; //Êı¾İÓò
-	Node next;  //Ö¸ÕëÓò
+	Object element; //æ•°æ®åŸŸ
+	Node next;  //æŒ‡é’ˆåŸŸ
 	
-	//Í·½áµãµÄ¹¹Ôì·½·¨
+	//å¤´ç»“ç‚¹çš„æ„é€ æ–¹æ³•
 	public Node(Node nextval)
 	{
 		this.next = nextval;
 	}
 	
-	//·ÇÍ·½áµãµÄ¹¹Ôì·½·¨
+	//éå¤´ç»“ç‚¹çš„æ„é€ æ–¹æ³•
 	public Node(Object obj,Node nextval)
 	{
 	   this.element = obj;
 	   this.next = nextval;
 	}
 	
-	//»ñµÃµ±Ç°½áµãµÄºó¼Ì½áµã
+	//è·å¾—å½“å‰ç»“ç‚¹çš„åç»§ç»“ç‚¹
 	public Node getNext()
 	{
 		return this.next;
 	}
 	
-	//»ñµÃµ±Ç°µÄÊı¾İÓòµÄÖµ
+	//è·å¾—å½“å‰çš„æ•°æ®åŸŸçš„å€¼
 	public Object getElement()
 	{
 		return this.element;
 	}
 	
-	//ÉèÖÃµ±Ç°½áµãµÄÖ¸ÕëÓò
+	//è®¾ç½®å½“å‰ç»“ç‚¹çš„æŒ‡é’ˆåŸŸ
 	public void setNext(Node nextval)
 	{
 		this.next = nextval;
 	}
 	
-	//ÉèÖÃµ±Ç°½áµãµÄÊı¾İÓò
+	//è®¾ç½®å½“å‰ç»“ç‚¹çš„æ•°æ®åŸŸ
 	public void setElement(Object obj)
 	{
 		this.element = obj;

@@ -1,13 +1,14 @@
+package çº¿æ€§è¡¨_01;
 
 public class SequenceList implements List{
     
-	//Ä¬ÈÏµÄË³Ğò±íµÄ×î´ó³¤¶È
+	//é»˜è®¤çš„é¡ºåºè¡¨çš„æœ€å¤§é•¿åº¦
 	final int defaultSize =10;
-	//×î´ó³¤¶È
+	//æœ€å¤§é•¿åº¦
 	int maxSize;
-	//µ±Ç°³¤¶È
+	//å½“å‰é•¿åº¦,ä¼šå®æ—¶å˜åŒ–çš„
 	int size;
-	//¶ÔÏóÊı×é
+	//å¯¹è±¡æ•°ç»„
 	Object[] listArray;
 	
 	
@@ -21,11 +22,11 @@ public class SequenceList implements List{
 		init(size);
 	}
 	
-	//Ë³Ğò±íµÄ³õÊ¼»¯·½·¨
+	//é¡ºåºè¡¨çš„åˆå§‹åŒ–æ–¹æ³•
 	private void init(int size)
 	{
 		maxSize = size;
-		this.size = 0;
+		this.size = 0;//åˆå§‹è®¾ç½®å½“å‰é•¿åº¦ä¸º0
 		listArray = new Object[size];
 	}
 	
@@ -34,13 +35,13 @@ public class SequenceList implements List{
 		// TODO Auto-generated method stub
 		if(isEmpty())
 		{
-			throw new Exception("Ë³Ğò±íÎª¿Õ£¬ÎŞ·¨É¾³ı£¡");
+			throw new Exception("é¡ºåºè¡¨ä¸ºç©ºï¼Œæ— æ³•åˆ é™¤ï¼");
 		}
 		if(index<0||index>size-1)
 		{
-			throw new Exception("²ÎÊı´íÎó£¡");
+			throw new Exception("å‚æ•°é”™è¯¯ï¼");
 		}
-		//ÒÆ¶¯ÔªËØ
+		//ç§»åŠ¨å…ƒç´ 
 		for(int j=index;j<size-1;j++)
 		{
 			listArray[j]=listArray[j+1];
@@ -53,7 +54,7 @@ public class SequenceList implements List{
 		// TODO Auto-generated method stub
 		if(index<0||index>=size)
 		{
-			throw new Exception("²ÎÊı´íÎó£¡");
+			throw new Exception("å‚æ•°é”™è¯¯ï¼");
 		}
 		return listArray[index];
 	}
@@ -61,17 +62,17 @@ public class SequenceList implements List{
 	@Override
 	public void insert(int index, Object obj) throws Exception {
 		// TODO Auto-generated method stub
-		//ÏßĞÔ±íÒÑÂú
+		//çº¿æ€§è¡¨å·²æ»¡
 		if(size==maxSize)
 		{
-			throw new Exception("Ë³Ğò±íÒÑÂú£¬ÎŞ·¨²åÈë£¡");
+			throw new Exception("é¡ºåºè¡¨å·²æ»¡ï¼Œæ— æ³•æ’å…¥ï¼");
 		}
-		//²åÈëÎ»ÖÃ±àºÅÊÇ·ñºÏ·¨
+		//æ’å…¥ä½ç½®ç¼–å·æ˜¯å¦åˆæ³•
 		if(index<0||index>size)
 		{
-		   throw new Exception("²ÎÊı´íÎó£¡");
+		   throw new Exception("å‚æ•°é”™è¯¯ï¼");
 		}
-		//ÒÆ¶¯ÔªËØ
+		//ç§»åŠ¨å…ƒç´  update jyc æŠŠå¤§äºindexçš„éƒ¨åˆ†çš„æœ€åä¸€ä¸ªå…ƒç´ å¼€å§‹å‘å³ç§»åŠ¨ï¼Œå¦‚æœæŠŠå¤§äºindexçš„ç¬¬ä¸€ä¸ªå…ƒç´ å‘å³ç§»åŠ¨çš„è¯ï¼Œä¼šäº§ç”Ÿè¦†ç›–åé¢çš„å…ƒç´ çš„é—®é¢˜
 		for(int j=size;j>index;j--)
 		{
 			listArray[j]=listArray[j-1];

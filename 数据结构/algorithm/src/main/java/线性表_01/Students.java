@@ -1,10 +1,12 @@
-//Ñ§ÉúÀà
+package çº¿æ€§è¡¨_01;
+
+//å­¦ç”Ÿç±»
 public class Students {
 
-	private String sid;// Ñ§ºÅ
-	private String name;// ĞÕÃû
-	private String gender;// ĞÔ±ğ
-	private int age;// ÄêÁä
+	private String sid;// å­¦å·
+	private String name;// å§“å
+	private String gender;// æ€§åˆ«
+	private int age;// å¹´é¾„
     
 	public Students()
 	{
@@ -21,7 +23,7 @@ public class Students {
 	
 	public String toString()
 	{
-	   return "Ñ§ºÅ£º"+this.getSid()+" ĞÕÃû£º"+this.getName()+" ĞÔ±ğ£º"+this.getGender()+" ÄêÁä:"+this.getAge();	
+	   return "å­¦å·ï¼š"+this.getSid()+" å§“åï¼š"+this.getName()+" æ€§åˆ«ï¼š"+this.getGender()+" å¹´é¾„:"+this.getAge();	
 	}
 	
 	public String getSid() {
