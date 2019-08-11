@@ -30,3 +30,21 @@ docker run --name mycontainer -it mycentos:V1 /bin/bash 成功了
 		2)docker login 重新输入用户名和密码
 		3)docker push 15801001455/mycentos:V1
 	 
+
+
+
+-------------------------------------------------------------------------------------
+docker安装的参考：https://docs.docker.com/install/linux/docker-ce/centos/ 按照这个安装最省事
+           1)  yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+           2)  yum install -y yum-utils device-mapper-persistent-data lvm2
+	   3)  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+	   4)  yum install docker-ce docker-ce-cli containerd.io
+	   5)  systemctl start docker
+	   6)  docker run hello-world

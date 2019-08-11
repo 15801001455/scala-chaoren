@@ -20,6 +20,7 @@ public class MainClass {
 		System.out.println(house.getFloor());
 		System.out.println(house.getWall());
 		System.out.println(house.getHousetop());
+
 	}
 
 }
