@@ -27,7 +27,7 @@ public class LinkList implements List {
 			return;
 		current = head.next;
 		int j=0;//循环变量
-		while(current != null&&j<index)
+		while(current != null && j < index)
 		{
 			current = current.next;
 			j++;

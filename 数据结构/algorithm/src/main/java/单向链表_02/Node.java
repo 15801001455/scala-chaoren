@@ -4,15 +4,15 @@ package 单向链表_02;
 public class Node {
   
 	Object element; //数据域
-	Node next;  //指针域
+	Node next;  //指针域,指向下一个节点
 	
-	//头结点的构造方法
+	//头结点的构造方法 （头节点不存放元素,看PPT可懂）
 	public Node(Node nextval)
 	{
 		this.next = nextval;
 	}
 	
-	//非头结点的构造方法
+	//非头结点的构造方法 (元首节点及后面的节点 看PPT可懂)
 	public Node(Object obj,Node nextval)
 	{
 	   this.element = obj;

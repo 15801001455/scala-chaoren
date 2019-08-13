@@ -48,3 +48,49 @@ docker安装的参考：https://docs.docker.com/install/linux/docker-ce/centos/ 
 	   4)  yum install docker-ce docker-ce-cli containerd.io
 	   5)  systemctl start docker
 	   6)  docker run hello-world
+
+WORKDIR:
+	1) 注意用WORKDIR,不要用RUN cd
+	2) 尽量使用绝对目录
+
+ENV:
+
+VOLUMN AND EXPOSE
+
+RUN and CMD and ENTRYPOINT:
+	RUN: 执行命令并创建新的Image Layer
+	CMD: 设置容器启动后默认的命令和参数
+		1)容器启动时默认执行的命令
+		2）如果启动容器docker run执行了其他命令，则CMD命令被忽略 比如docker run -it centos /bin/bash，由于执行了/bin/bash则忽略CMD命令
+		3)多个CMD，只有最后一个会执行
+	ENTRYPOINT: 设置容器启动时运行的命令
+		1)让容器以应用程序或者服务的形式运行
+		2）不会被忽略，一定会执行
+		3）最佳实践：写一个shell脚本作为entrypoint
+   Shell模式：
+        RUN yum install -y vim
+	CMD echo "hello docker"
+	ENTRYPOINT echo "hello docker"
+   Exec模式:
+   	RUN ["yum","install","-y","vim"]
+
+
+Docker也有私有仓库 不用偏偏把隐私放到dockerhub上 到时候用到再看看
+
+#删除退出的容器
+docker rm $(docker ps -aq)
+
+Dockerfile外部如何传递参数(ENTRYPOINT和CMD配合使用 ENTRYPOINT指定命令 CMD传空 就可以在运行容器的时候指定参数了)
+	1）Dockerfile
+		FROM ubuntu
+		RUN apt-get update && apt-get install -y stress
+		ENTRYPOINT ["/usr/bin/stree"]
+		CMD []
+	2)docker build 15801001455/ubuntu-stree .
+	3）生成容器给镜像传递参数使用：docker run -it 15801001455/ubuntu-stress --vm 1 --verbose
+
+
+限制容器的资源：
+//这个命令代表容器最多占用200M+200Mswap=400M内存，但是这个容器启动里面用stress压力测试申请500M内存，容器就启动不起来了
+docker run --memory=200M 15801001455/ubuntu-stree --vm 1 --vm-bytes 500M
+//cpu也可以设置权重 用到再看 docker run --cpu-shares=10 --name=test1 15801001455/ubuntu-stress --cpu 1
