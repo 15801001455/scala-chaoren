@@ -1,5 +1,8 @@
 package 中介者模式18.ex1;
 
+/**
+ * 这个是不好的方式
+ */
 public class MainClass {
 	public static void main(String[] args) {
 		Person zhangsan = new Man("张三",5);

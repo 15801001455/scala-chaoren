@@ -3,6 +3,7 @@ package 中介者模式18.ex2;
 public abstract class Person {
 	private String name;
 	private int condition;
+	//update jyc 持有对中介者的引用
 	private Mediator mediator;
 
 	

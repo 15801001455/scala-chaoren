@@ -1,4 +1,4 @@
-package 桥接模式15.eg3;
+package 桥接模式15;
 
 public class Bus extends Car{
 

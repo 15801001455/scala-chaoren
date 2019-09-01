@@ -1,5 +1,8 @@
 package 中介者模式18.ex2;
 
+/**
+ * 核心类  中介者
+ */
 public class Mediator {
 	private Man man;
 	private Woman woman;
