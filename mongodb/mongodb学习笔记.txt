@@ -1,0 +1,24 @@
+私塾教育
+文档地址：https://docs.mongodb.com/
+
+每个用户有四门课:
+for(var i=0;i<100;i++){
+	for(var j=0;j<5;j++){
+		db.users.insertOne({"userId":"s"+i,course:"c"+j,score:Math.random()*100})
+	}
+}
+
+1)考了70分以上学生
+db.users.aggregate({"$match":{"score":{"$gte":70}}});     //为了学习aggregate
+db.users.aggregate({$match:{score:{$gte:70}}});           //发现关键词和属性没有双引号也没事
+db.users.aggregate([{$match:{score:{$gte:70}}}]);         //aggregate中是连锁操作,即使是只有一个操作也可以使用中括号
+db.users.find({score:{$gte:70}});                         //这种是最简单的方式
+
+db.users.aggregate([{$match:{score:{$gte:70}}},{$project:{_id:0,course:1,score:1}}]);//先找出70分以上的，再投影只展示course列和score列
+db.users.aggregate({$match:{score:{$gte:70}}},{$project:{_id:0,course:1,score:1}});//中括号也可以删除，中括号看来没什么用了,以后都可以不用了
+
+2)对学生的名字排序，某个学生名字出现一次就给他加1   group函数必须有参数_id
+db.users.aggregate({$match:{score:{$gte:70}}},{$project:{_id:0,userId:1}},{$group:{_id:"$userId",count:{$sum:1}}}); //注意 "$userId" 这里必须有引号，表示对字段userId的引用 group函数必须有参数_id
+
+
+
