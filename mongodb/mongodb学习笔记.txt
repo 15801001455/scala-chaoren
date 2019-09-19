@@ -43,4 +43,15 @@ db.users.aggregate({$project:{newScore:"$score",_id:0,score:1,newScore:-1}});//�
 db.users.aggregate({$project:{newScore:{$add:["$score",50]}}});
 
 
-
+mongodb的陷阱:
+陷阱1：
+陷阱: 在MongoDB中key的顺序非常重要，{ a: 1, b: 2 } 和 { b: 2, a: 1 }是不匹配的。
+为什么: MongoDB使用叫做BSON的二进制数据格式。在BSON中key的顺序非常重要。注意，JSON对象是一个无序的键/值对集合。
+db.books.insert({title:"老人与海",meta:{author:"zhangsan",year:2008}});
+//能查到
+db.books.find({title:"老人与海",meta:{author:"zhangsan",year:2008}});
+db.books.find({meta:{author:"zhangsan",year:2008},title:"老人与海"});
+db.books.find({title:"老人与海"});
+db.books.find({meta:{author:"zhangsan",year:2008}});
+//不能查到
+db.books.find({meta:{year:2008,author:"zhangsan"}});
