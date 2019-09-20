@@ -130,7 +130,7 @@ NIO : java.nio.Buffer
 	mark				//记号(标记)
 
 	//分配字节缓冲区
-	ByteBuffer buf = ByteBuffer.allocate(20);		//update jyc 用java visualVM工具能看到内存变化
+	ByteBuffer buf = ByteBuffer.allocate(1024 * 1024 * 1024);		//update jyc 用java visualVM工具能看到内存变化
 	ByteBuffer buf = ByteBuffer.allocateDirect(20);	//直接内存，update jyc用java visualVM工具看不到效果，在虚拟机外面用内存，要用windows的资源管理器才能看到内存的变化
 	
 	java.nio.ByteBuffer
