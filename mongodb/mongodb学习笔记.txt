@@ -43,6 +43,36 @@ db.users.aggregate({$project:{newScore:"$score",_id:0,score:1,newScore:-1}});//�
 db.users.aggregate({$project:{newScore:{$add:["$score",50]}}});
 
 
+$unwind
+把数组中的每个值拆分成单独的文档
+db.t1.insert({"userId":"u1","score":[10,20,30]})
+> db.t1.aggregate({"$unwind":"$score"})
+{ "_id" : ObjectId("5d84517b6211f3fbd4d08052"), "userId" : "u1", "score" : 10 }
+{ "_id" : ObjectId("5d84517b6211f3fbd4d08052"), "userId" : "u1", "score" : 20 }
+{ "_id" : ObjectId("5d84517b6211f3fbd4d08052"), "userId" : "u1", "score" : 30 }
+
+MapReduce:运行慢，不适合实时
+举例：找出集合中所有的key，并统计每个键出现的次数
+var map = function(){
+	for(var key in this){//this代表对当前文档(表中的一行)的引用
+		emit(key,{count:1})
+	}
+};
+var reduce = function(key,emits){
+	var total = 0;
+	for(var i in emits){
+		total += emits[i].count;
+	}
+	return {"count":total};
+};
+var mr = db.runCommand({"mapreduce":"users","map":map,"reduce":reduce,"out":"myOut"});//myOut是个集合(表),不用提前建立
+如何查看结果：
+> db.myOut.find()
+{ "_id" : "_id", "value" : { "count" : 500 } }
+{ "_id" : "course", "value" : { "count" : 500 } }
+{ "_id" : "score", "value" : { "count" : 500 } }
+{ "_id" : "userId", "value" : { "count" : 500 } }
+--------------------------------------------------------------------------------------
 mongodb的陷阱:
 陷阱1：
 陷阱: 在MongoDB中key的顺序非常重要，{ a: 1, b: 2 } 和 { b: 2, a: 1 }是不匹配的。
