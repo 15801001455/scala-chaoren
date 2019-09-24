@@ -1,22 +1,22 @@
 /**
- * Ïß³Ì
+ * çº¿ç¨‹
  */
 class ThreadDemo1{
 	public static void main(String[] args) 	{		
 		MyThread t1 = new MyThread();
 		YourThread t2 = new YourThread();
-		//Æô¶¯Ïß³Ì
-		t1.run();			//1¸öÏß³Ì.
+		//å¯åŠ¨çº¿ç¨‹
+		t1.run();			//1ä¸ªçº¿ç¨‹.
 		t2.start();
 	}
 }
 
 class MyThread extends Thread{
-	//Ö´ĞĞÏß³ÌµÄÊ±ºò½øĞĞµ÷ÓÃ,jvm¸ºÔğµ÷ÓÃ
+	//æ‰§è¡Œçº¿ç¨‹çš„æ—¶å€™è¿›è¡Œè°ƒç”¨,jvmè´Ÿè´£è°ƒç”¨
 	public void run(){
 		while(true){
 			System.out.println("myThread");
-			yield();		//·ÅÆúcpuµÄÇÀÕ¼È¨
+			yield();		//æ”¾å¼ƒcpuçš„æŠ¢å æƒ
 		}
 	}
 }

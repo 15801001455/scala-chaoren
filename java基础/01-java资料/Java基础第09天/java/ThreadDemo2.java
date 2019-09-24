@@ -1,9 +1,9 @@
 class ThreadDemo2 {
 	public static void main(String[] args) 	{
-		Player p1 = new Player("³ÉÁú",5000);
-		Player p2 = new Player("µÒÁú",8000);
-		Player p3 = new Player("Ê·Ì©Áú",2000);
-		Player p4 = new Player("ÀîĞ¡Áú",3000);
+		Player p1 = new Player("æˆé¾™",5000);
+		Player p2 = new Player("ç‹„é¾™",8000);
+		Player p3 = new Player("å²æ³°é¾™",2000);
+		Player p4 = new Player("æå°é¾™",3000);
 		//
 		try{
 			p1.start();
@@ -17,10 +17,10 @@ class ThreadDemo2 {
 			p4.join();
 		}catch(Exception e){
 		}
-		System.out.println("ÈËµ½ÆëÁË£¬¿ª¾Ö£¡£¡");
+		System.out.println("äººåˆ°é½äº†ï¼Œå¼€å±€ï¼ï¼");
 	}
 }
-//Íæ¼Ò.
+//ç©å®¶.
 class Player extends Thread{
 	private String name ;
 	private int time ;
@@ -30,13 +30,13 @@ class Player extends Thread{
 	}
 
 	public void run(){
-		System.out.println("Íæ¼Ò:" + name + " ³ö·¢ÁË£¡");
+		System.out.println("ç©å®¶:" + name + " å‡ºå‘äº†ï¼");
 		try{
-			//ÈÃµ±Ç°Ïß³ÌĞİÃßtimeºÁÃëÊı
+			//è®©å½“å‰çº¿ç¨‹ä¼‘çœ timeæ¯«ç§’æ•°
 			Thread.sleep(time);
 		}
 		catch(Exception e){
 		}
-		System.out.println("Íæ¼Ò:" + name + ":" + time +  " µ½ÁË£¡");
+		System.out.println("ç©å®¶:" + name + ":" + time +  " åˆ°äº†ï¼");
 	}
 }
