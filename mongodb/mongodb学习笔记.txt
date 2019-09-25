@@ -72,6 +72,41 @@ var mr = db.runCommand({"mapreduce":"users","map":map,"reduce":reduce,"out":"myO
 { "_id" : "course", "value" : { "count" : 500 } }
 { "_id" : "score", "value" : { "count" : 500 } }
 { "_id" : "userId", "value" : { "count" : 500 } }
+
+举例2：统计每个userId出现的次数
+var map = function(){
+	emit(this.userId,{count:1})
+};
+var reduce = function(key,emits){
+	var total = 0;
+	for(var i in emits){
+		total += emits[i].count;
+	}
+	return {"count":total};
+};
+var mr = db.runCommand({"mapreduce":"users","map":map,"reduce":reduce,"out":"myOut"});
+
+举例3：发送给map前对文档进行过滤（非常有用）
+var query = {"userId":{$lt:"s2"}}
+var mr = db.runCommand({"mapreduce":"users","map":map,"reduce":reduce,"query":query,"out":"myOut"});
+> db.myOut.find()
+{ "_id" : "s0", "value" : { "count" : 5 } }
+{ "_id" : "s1", "value" : { "count" : 5 } }
+
+举例4：finalize 发送到out之前的最终结果
+var finalize = function(k,v){
+	return {"aaa":k,"bbb":v}
+}
+var mr = db.runCommand({"mapreduce":"users","map":map,"reduce":reduce,"query":query,"out":"myOut","finalize":finalize});
+> db.myOut.find()
+{ "_id" : "s0", "value" : { "aaa" : "s0", "bbb" : { "count" : 5 } } }
+{ "_id" : "s1", "value" : { "aaa" : "s1", "bbb" : { "count" : 5 } } }
+{ "_id" : "s10", "value" : { "aaa" : "s10", "bbb" : { "count" : 5 } } }
+{ "_id" : "s11", "value" : { "aaa" : "s11", "bbb" : { "count" : 5 } } }
+-----------
+
+
+
 --------------------------------------------------------------------------------------
 mongodb的陷阱:
 陷阱1：
