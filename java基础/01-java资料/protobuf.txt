@@ -1,0 +1,121 @@
+﻿protobuf
+-------------
+	1.protocal buffer,协议缓冲区.
+	2.串行化技术。
+		java.io.Serializable
+		ObjectOutputStream / ObjectInputStream
+
+串行化
+---------------
+	[java串行化]
+	易于使用
+	效率不高。
+	没有语言的互操作性。
+
+	[手动二进制编码]
+	效率高
+	难
+	跨语言
+
+	[人性化文档结构]
+	xml/json/txt/sax
+	低效
+
+	[protocal buffer]
+	描述语言
+	编译器
+	库
+	2008年发布.
+
+PB下载和使用
+----------------
+	0.安装protobuf-win32.zip
+		a.解压即可。
+		b.配置环境path变量
+			path=%path%:c:\myprograms\protocal-2.5.0
+			
+	1.设计对象
+	2.描述对象(关于这个proto文件的解释 https://www.iteye.com/blog/shift-alt-ctrl-2210885 语法也不是很难)
+		[d:/addressbook.proto]
+		package tutorial;
+		option java_package = "com.example.tutorial";
+		option java_outer_classname = "AddressBookProtos";
+		message Person {
+			required string name = 1;
+			required int32 id = 2;
+			optional string email = 3;
+			enum PhoneType {
+			MOBILE = 0;
+			HOME = 1;
+			WORK = 2;
+		}
+		message PhoneNumber {
+			required string number = 1;
+			optional PhoneType type = 2 [default = HOME];
+		}
+		repeated PhoneNumber phone = 4;
+		}
+		message AddressBook {
+			repeated Person person = 1;
+		}
+	3.编译描述
+        //java文件输出到--java_out指定的位置
+		cmd>protoc --java_out=d:\protobuf\out addressbook.proto
+		
+		-- 会生成源代码.
+
+	4.获得生成的源代码
+		略
+	5.导入对象到工程
+		a.引入google protobuf类库
+		b.复制源代码到eclise中.
+	
+	6.实例化对象
+		package com.example.tutorial;
+
+		import java.io.FileNotFoundException;
+		import java.io.FileOutputStream;
+
+		import com.example.tutorial.AddressBookProtos.Person;
+		import com.example.tutorial.AddressBookProtos.Person.PhoneNumber;
+		import com.example.tutorial.AddressBookProtos.Person.PhoneType;
+
+		public class TestPB {
+
+			public static void main(String[] args) throws Exception {
+				//使用对象
+				PhoneNumber number = Person.PhoneNumber.newBuilder()
+								.setType(PhoneType.MOBILE)
+								.setNumber("123456")
+								.build();
+
+				Person p = Person.newBuilder().setId(100)
+					.setName("tom")
+					.setEmail("abc@hotmail.com")
+					.addPhone(number)
+					.build();
+				
+				//使用PB串行化对象
+				FileOutputStream fos = new FileOutputStream("d:/protobuf/person.dat");
+				p.writeTo(fos);//update jyc 这句是重点啊,可以打开person.dat文件看看是不是看不懂,这个就是利用了protobuf的串行化技术,生成文件又小效率又高，利于网络之间的通信
+				fos.close();
+				System.out.println("over");
+				
+			}
+		}
+--------------------------
+项目中使用
+<dependency>  
+     <groupId>com.google.protobuf</groupId>  
+     <artifactId>protobuf-java</artifactId>  
+     <version>2.6.1</version>  
+</dependency>
+
+
+串行化技术对比
+-----------------
+	[Space Size]
+	java-build-in( 870) > google-protobuf(230) > avro(210)		//3倍多
+	
+	[Time]
+	java-build-in(75.3) > avro(12.3) > google-protobuf(6.6)		//10倍多
