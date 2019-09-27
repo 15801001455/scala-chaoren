@@ -1,6 +1,25 @@
 私塾教育
 文档地址：https://docs.mongodb.com/
 
+------------------------------------------------------------
+基础:
+1.安装：MongoDB的安装非常简单，只需要将下载的MongoDB的压缩文件解压到任意目录，并将其中的bin目录加入到系统的path环境变量中即可
+2.启动服务端:注意指定数据库位置，要不每次重新启动都会丢失数据库 mongod --dbpath=D:\mongo_data
+备份：
+备份数据使用下面的命令：
+>mongodump -h dbhost -d dbname -o dbdirectory
+-h：MongDB所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017
+-d：需要备份的数据库实例，例如：test
+-o：备份的数据存放位置，例如：c:\data\dump，当然该目录需要提前建立，在备份完成后，系统自动在dump目录下建立一个test目录，这个目录里面存放该数据库实例的备份数据。
+恢复：
+>mongorestore -h dbhost -d dbname -directoryperdb dbdirectory
+-h：MongoDB所在服务器地址
+-d：需要恢复的数据库实例，例如：test，当然这个名称也可以和备份时候的不一样，比如test2
+-directoryperdb：备份数据所在位置，例如：c:\data\dump\test
+
+
+------------------------------------------------------------
+
 每个用户有四门课:
 for(var i=0;i<100;i++){
 	for(var j=0;j<5;j++){
