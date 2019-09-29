@@ -1,0 +1,9 @@
+spring事务隔离级别是什么，数据库隔离级别是什么，它们有什么关系。我来帮大家理一理。
+
+其实非常简单，
+spring发送SQL请求和我们用的Navicat 写 set session transaction  isolation level  
+具体级别
+
+ start transaction 
+
+是一样的，实际上就是spring 使用了 MySQL提供的标准接口，说白了就是告诉MySQL 使用什么事务隔离级别而已。
