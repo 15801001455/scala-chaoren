@@ -1,23 +1,28 @@
 package 模拟买票;
 
+/**
+ * 发现implentents Runnable比extends Thread优雅多了 implement方式需要线程类都加上static，连锁都要加上static，太费事了还容易出错
+ */
 class Window1 implements Runnable {
-    //这里必须声明为static 类公用变量 要不new完三个窗口后，每个窗口就各个有100张票，总共300张票了，肯定就不对了，所以多个线程操作同一份数据更适合用Runnable，看TestThread1
 
-    private Integer ticketNum = 100;//代表10张票
+    private Integer ticketNum = 10;//代表10张票
+
+    private Object obj = new Object();
 
     @Override
     public void run() {
-        sellTicket();
+        while (true) {
+            sellTicket();
+        }
     }
 
     public void sellTicket() {
-        while (true) {
-                if (ticketNum > 0) {
-                    System.out.println(Thread.currentThread().getName() + "售票,票号：" + ticketNum--);//shift+空格控制搜狗输入法的全角和半角
-                } else {
-                    break;
-                }
+        synchronized (obj){
+            if (ticketNum > 0) {
+                System.out.println(Thread.currentThread().getName() + "售票,票号：" + ticketNum--);//shift+空格控制搜狗输入法的全角和半角
+            }
         }
+
     }
 }
 
