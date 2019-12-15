@@ -23,7 +23,7 @@ class Window2 implements Runnable {
     }
 
     public int sellTicket() {
-        lock.lock();
+        lock.lock();//上锁的位置如何确定呢？就是要把上锁的代码包含过有共享变量的地方 这里就是ticketNum变量
         try{
             if (ticketNum > 0) {
                 System.out.println(Thread.currentThread().getName() + "售票,票号：" + ticketNum--);//shift+空格控制搜狗输入法的全角和半角
