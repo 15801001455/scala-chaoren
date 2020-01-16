@@ -1,3 +1,5 @@
+package 线程;
+
 class ThreadDemo2 {
 	public static void main(String[] args) 	{
 		Player p1 = new Player("成龙",5000);

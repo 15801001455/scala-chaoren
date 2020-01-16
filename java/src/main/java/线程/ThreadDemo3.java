@@ -1,8 +1,10 @@
+package çº¿ç¨‹;
+
 class ThreadDemo3 {
 	public static void main(String[] args) 	{
 		Room r1 = new Room("no1",5000);
 		Waiter w = new Waiter();
-		//ÉèÖÃÏß³ÌÎªÊØ»¤Ïß³Ì
+		//è®¾ç½®çº¿ç¨‹ä¸ºå®ˆæŠ¤çº¿ç¨‹
 		//w.setDaemon(true);
 		r1.start();
 		w.start();
@@ -16,16 +18,16 @@ class Room extends Thread{
 		this.time = time ;
 	}
 	public void run(){
-		System.out.println(no + "ºÅ·¿¼äÕıÔÚ³ª¸è!");
+		System.out.println(no + "å·æˆ¿é—´æ­£åœ¨å”±æ­Œ!");
 		try{
 			Thread.sleep(time);
 		}
 		catch(Exception e){
 		}
-		System.out.println(no + "ºÅ·¿¼äÂòµ¥ÁË£¬×ßÈËÁË!");
+		System.out.println(no + "å·æˆ¿é—´ä¹°å•äº†ï¼Œèµ°äººäº†!");
 	}
 }
-//·şÎñÔ±
+//æœåŠ¡å‘˜
 class Waiter extends Thread{
 	public Waiter(){
 		this.setDaemon(true);

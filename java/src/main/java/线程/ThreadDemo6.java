@@ -1,16 +1,18 @@
+package çº¿ç¨‹;
+
 class ThreadDemo6 {
 	public static void main(String[] args) 	{
-		Saler s1 = new Saler("==>ÀÏÕÅ");
-		Saler s2 = new Saler("=====>ÀÏÍõ");
+		Saler3 s1 = new Saler3("==>è€å¼ ");
+		Saler3 s2 = new Saler3("=====>è€ç‹");
 		s1.start();
 		s2.start();
 	}
 }
-class Saler extends Thread{
-	//Æ±Êı
+class Saler3 extends Thread{
+	//ç¥¨æ•°
 	static int tickets = 100 ;
 	private String name ;
-	public Saler(String name){
+	public Saler3(String name){
 		this.name = name ;
 	}
 	public void run(){
@@ -25,9 +27,9 @@ class Saler extends Thread{
 		}
 	}
 
-	//Í¬²½·½·¨
+	//åŒæ­¥æ–¹æ³•
 	public static synchronized int getTicket(){
-		//Í¬²½´úÂë¿é
+		//åŒæ­¥ä»£ç å—
 		int currTicket = tickets ;
 		tickets -- ;
 		return currTicket ;

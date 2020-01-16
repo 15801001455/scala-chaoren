@@ -1,16 +1,18 @@
+package çº¿ç¨‹;
+
 class ThreadDemo4 {
 	public static void main(String[] args) 	{
-		Saler s1 = new Saler("ÀÏÕÅ");
-		Saler s2 = new Saler("ÀÏÍõ");
+		Saler s1 = new Saler("è€å¼ ");
+		Saler s2 = new Saler("è€ç‹");
 		s1.start();
 		s2.start();
 	}
 }
 
 class Saler extends Thread{
-	//Ëø
+	//é”
 	static Object lock = new Object();
-	//Æ±Êı
+	//ç¥¨æ•°
 	static int tickets = 100 ;
 	private String name ;
 	public Saler(String name){
