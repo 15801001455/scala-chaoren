@@ -158,11 +158,11 @@ public class TestMap {
 
 	@Test
 	public void testNestedMap(){
-		//  楼栋编号                       单元编号
-		Map<Integer,Map<String,List<String>>> allBuilding = new HashMap<Integer,Map<String,List<String>>>();
+		//  楼栋编号          单元编号
+		Map<Integer,Map<String,List<String>>> allBuilding = new HashMap<>();
 		for(int i = 1 ; i <= 10 ; i ++){
 			//   单元编号         人员名单
-			Map<String,List<String>> allCells = new HashMap<String,List<String>>();
+			Map<String,List<String>> allCells = new HashMap<>();
 			//5个单元
 			for(int j = 1 ; j <= 5 ; j ++){
 				List<String> allNames = new ArrayList<String>();

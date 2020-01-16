@@ -1,10 +1,6 @@
 package 流;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 import org.junit.Test;
 
@@ -25,6 +21,7 @@ public class TestBufferedStream {
 		
 		System.out.println((int)'\r');
 		System.out.println((int)'\n');
+		//注意test.txt要用系统自带文本编辑器打开另存为UTF-8编码,否则读取乱码
 		FileReader reader = new FileReader("d:/test.txt");
 		BufferedReader br = new BufferedReader(reader);
 		String line = null ;
@@ -40,7 +37,7 @@ public class TestBufferedStream {
 	 */
 	@Test
 	public void testReaderNBufferedReader() throws Exception{
-		String file = "F:\\duowan_user.txt" ;
+		String file = "D:\\fang-crm-scheduled.log" ;
 		//FileReader
 		FileReader fr = new FileReader(file);
 		//
