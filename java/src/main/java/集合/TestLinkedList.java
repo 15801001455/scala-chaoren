@@ -1,4 +1,4 @@
-package com.it18zhang.java13;
+package 集合;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -16,12 +16,14 @@ public class TestLinkedList {
 		list.add(1);
 		list.add(2);
 		list.add(3);
-		list.add(0, 5);
+		list.add(1, 5);//update jyc 这里容易理解错误 不会覆盖,插入元素后面的元素会后移
 		System.out.println(list.size());
+		System.out.println(list.toString());
 	}
 	
 	/**
 	 * 测试ArrayList和LinkedList性能比较
+	 * update jyc ArrayList指定位置插入元素,需要后面的所有元素后移，效率非常低，这种场景更适合使用LinkedList
 	 */
 	@Test
 	public void testWritePerformance(){
@@ -45,6 +47,7 @@ public class TestLinkedList {
 	
 	/**
 	 * 测试ArrayList和LinkedList性能比较
+	 * update jyc 查询是ArrayList效率更高
 	 */
 	@Test
 	public void testReadPerformance(){
@@ -62,12 +65,12 @@ public class TestLinkedList {
 			list2.add(i);
 		}
 		
-		//ArrayList,查询指定位置的元素
+		//ArrayList,查询指定位置的元素 效率高
 		long start = System.nanoTime() ;
 		list1.get(max / 2);
 		System.out.println(System.nanoTime() - start);
 		
-		//LinkedList查询指定位置的元素
+		//LinkedList查询指定位置的元素 效率低
 		start = System.nanoTime() ;
 		list2.get(max / 2);
 		System.out.println(System.nanoTime() - start);
@@ -78,7 +81,7 @@ public class TestLinkedList {
 	 */
 	@Test
 	public void testOtherMethod(){
-		List<String> list = new LinkedList<String>();
+		List<String> list = new LinkedList<>();
 		list.add(new String("tom"));
 		list.add(new String("tomas"));
 		list.add(new String("tomasLee"));
@@ -87,8 +90,8 @@ public class TestLinkedList {
 		System.out.println(list.size());
 		
 		//removeAll
-		//list.remove("tom");
-		list.remove(0);
-		System.out.println(list.size());
+		list.remove("tom");
+		//list.remove(0);
+		System.out.println(list.toString());
 	}
 }

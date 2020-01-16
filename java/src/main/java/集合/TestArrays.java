@@ -1,4 +1,4 @@
-package com.it18zhang.java14;
+package 集合;
 
 import java.util.ArrayList;
 import java.util.Arrays;

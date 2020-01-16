@@ -1,4 +1,4 @@
-package com.it18zhang.java14;
+package 流;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

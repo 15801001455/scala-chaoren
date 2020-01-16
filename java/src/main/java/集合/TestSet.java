@@ -1,4 +1,4 @@
-package com.it18zhang.java13;
+package 集合;
 
 import java.util.HashSet;
 import java.util.Iterator;
