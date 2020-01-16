@@ -30,6 +30,7 @@ class Room extends Thread{
 //服务员
 class Waiter extends Thread{
 	public Waiter(){
+		//update jyc 也可以在构造方法中设置守护线程 我的理解是主线程结束了，守护线程也会自动结束，while(true)里面的代码自动跳出终止
 		this.setDaemon(true);
 	}
 	public void run(){
