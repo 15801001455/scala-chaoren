@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-@RequestMapping(value = "/api",produces = MediaType.APPLICATION_JSON_VALUE)
+//@RequestMapping(value = "/api",produces = MediaType.APPLICATION_JSON_VALUE) 这句多余produces = MediaType.APPLICATION_JSON_VALUE
+@RequestMapping(value = "/api")
 public class MyController {
 
     @RequestMapping(value = "/test",method = RequestMethod.GET)
