@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 最正确的写法 TestThread和ThstThread1都有问题 没有加锁
+ * 最正确的写法 TestThread和TestThread1都有问题 没有加锁
  */
 class Window2 implements Runnable {
     private Integer ticketNum = 100;//代表10张票
