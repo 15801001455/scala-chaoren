@@ -6,12 +6,10 @@ spring:
     encoding:
       enabled: true
       charset: UTF-8
-  profiles:
-    active: prod
 server:
   port: 9090
 
 myConfig:
   myObject:
-    myName: zhangsan
+    myName: lisi
     myAge: 20
