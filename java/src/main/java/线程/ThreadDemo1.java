@@ -5,7 +5,7 @@ package 线程;
  */
 class ThreadDemo1{
 	public static void main(String[] args) 	{		
-		MyThread t1 = new MyThread();
+		线程.MyThread t1 = new 线程.MyThread();
 		YourThread t2 = new YourThread();
 		//如果执行这句的话，永远不会执行t2线程的代码了感觉 在t2.start()这行打断点永远进不来 可见yield还是要配合线程的start方法使用,直接
 		//调用线程的run方法,run方法中通过yield放弃cpu抢占权是无用的操作
