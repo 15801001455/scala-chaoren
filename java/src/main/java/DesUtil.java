@@ -1,5 +1,3 @@
-package com.fang.transfer.agent.common.tools.utils;
-
 import lombok.val;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
@@ -19,6 +17,12 @@ import java.security.NoSuchAlgorithmException;
  * Create by user on 2018-10-17
  */
 public class DesUtil {
+
+    public static void main(String[] args) throws Exception{
+        System.out.println(appEncrypt("123456","562asd32"));
+        System.out.println(encryptHexString("123456","562asd32","GB2312"));
+    }
+
     public static String bytes2hex(byte[] bytes) {
         final String HEX = "0123456789abcdef";
         StringBuilder sb = new StringBuilder(bytes.length * 2);
