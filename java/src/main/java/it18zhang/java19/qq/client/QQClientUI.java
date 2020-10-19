@@ -1,20 +1,13 @@
-package com.it18zhang.java19.qq.client;
+package it18zhang.java19.qq.client;
 
+import it18zhang.java19.qq.common.MessageFactory;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.net.Socket;
 import java.util.List;
-
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-
-import com.it18zhang.java19.qq.common.MessageFactory;
 
 /**
  * 客户端聊天界面
@@ -96,7 +89,7 @@ public class QQClientUI extends JFrame implements ActionListener{
 			String str = taInputMessage.getText();
 			if(str != null && !str.equals("")){
 				//发送自己的聊天信息
-				sender.sendMessage(MessageFactory.popClientTextMessage(str));
+				//sender.sendMessage(MessageFactory.popClientTextMessage(str));
 			}
 		}
 		//刷新按钮

@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.client;
+package it18zhang.java19.qq.client;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.it18zhang.java19.qq.common.MessageFactory;
+import it18zhang.java19.qq.common.MessageFactory;
 
 /**
  * 客户端私聊界面

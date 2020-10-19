@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.common;
+package it18zhang.java19.qq.common;
 
 /**
  * 单聊信息

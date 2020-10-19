@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.common;
+package it18zhang.java19.qq.common;
 
 /**
  * 服务器端的聊天记录的消息

@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.client;
+package it18zhang.java19.qq.client;
 
 import java.io.OutputStream;
 import java.net.Socket;

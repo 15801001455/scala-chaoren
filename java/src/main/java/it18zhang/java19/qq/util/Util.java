@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.util;
+package it18zhang.java19.qq.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

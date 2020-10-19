@@ -1,10 +1,10 @@
-package com.it18zhang.java19.qq.common;
+package it18zhang.java19.qq.common;
 
 import java.io.InputStream;
 import java.io.Serializable;
 import java.util.List;
 
-import com.it18zhang.java19.qq.util.Util;
+import it18zhang.java19.qq.util.Util;
 
 /**
  * 消息工厂
