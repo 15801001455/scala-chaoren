@@ -1,4 +1,4 @@
-package com.it18zhang.java14.gof.adapter;
+package it18zhang.java14.gof.adapter;
 
 public class TestWindow {
 	public static void main(String[] args) {
@@ -17,6 +17,7 @@ class WindowAdapter implements WindowListener{
 	}
 
 	public void onMax() {
+
 	}
 
 	public void onClose() {

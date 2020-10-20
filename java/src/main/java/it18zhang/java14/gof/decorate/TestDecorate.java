@@ -1,4 +1,4 @@
-package com.it18zhang.java14.gof.decorate;
+package it18zhang.java14.gof.decorate;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
