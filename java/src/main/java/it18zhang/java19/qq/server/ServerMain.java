@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.server;
+package it18zhang.java19.qq.server;
 
 public class ServerMain {
 	public static void main(String[] args) {

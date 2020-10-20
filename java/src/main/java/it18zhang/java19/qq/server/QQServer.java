@@ -1,4 +1,4 @@
-package com.it18zhang.java19.qq.server;
+package it18zhang.java19.qq.server;
 
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.it18zhang.java19.qq.common.MessageFactory;
-import com.it18zhang.java19.qq.util.Util;
+import it18zhang.java19.qq.common.MessageFactory;
+import it18zhang.java19.qq.util.Util;
 
 /**
  * 消息通信服务器

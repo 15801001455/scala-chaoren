@@ -20,18 +20,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        List<String> containList = new ArrayList<>();
-        containList.add("张三");
-        containList.add("李四");
-        containList.add("王五");
-        System.out.println(containList.contains("张三1"));
-
-        List<String> filterList = new ArrayList<>();
-        filterList.add("1");
-        filterList.add("2");
-        filterList.add("3");
-        String s2 = filterList.stream().filter(x -> x.contains("-1")).findAny().orElse("0");
-        System.out.println(s2);
+        System.out.println(4 & 1 + 4 + 16 + 32);
 
         BigDecimal bb = new BigDecimal("1257.5");
         String s1 = bigDecimal2StringNoZero(bb, 2);
@@ -100,6 +89,26 @@ public class Test {
 
         DecimalFormat decimalFormat = new DecimalFormat("###################.###########");
         System.out.println(bigDecimal2String("2", 4));
+    }
+
+    @org.junit.Test
+    public void orElseTest() {
+        List<String> filterList = new ArrayList<>();
+        filterList.add("1");
+        filterList.add("2");
+        filterList.add("3");
+        filterList.add("2");
+        String s2 = filterList.stream().filter(x -> x.contains("2")).findAny().orElse("0");
+        System.out.println(s2);
+    }
+
+    @org.junit.Test
+    public void containsStr() {
+        List<String> containList = new ArrayList<>();
+        containList.add("张三");
+        containList.add("李四");
+        containList.add("王五");
+        System.out.println(containList.contains("张三1"));
     }
 
     public final static String bigDecimal2String(String number, Integer length) {

@@ -1,17 +1,17 @@
-package com.it18zhang.java19.qq.server;
+package it18zhang.java19.qq.server;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import com.it18zhang.java19.qq.common.ClientRequestFreshFriendsMessage;
-import com.it18zhang.java19.qq.common.ClientChatSingleBean;
-import com.it18zhang.java19.qq.common.ClientChatSingleMessage;
-import com.it18zhang.java19.qq.common.ClientChatsMessage;
-import com.it18zhang.java19.qq.common.Message;
-import com.it18zhang.java19.qq.common.MessageFactory;
-import com.it18zhang.java19.qq.common.ServerChatSingleBean;
-import com.it18zhang.java19.qq.util.Util;
+import it18zhang.java19.qq.common.ClientRequestFreshFriendsMessage;
+import it18zhang.java19.qq.common.ClientChatSingleBean;
+import it18zhang.java19.qq.common.ClientChatSingleMessage;
+import it18zhang.java19.qq.common.ClientChatsMessage;
+import it18zhang.java19.qq.common.Message;
+import it18zhang.java19.qq.common.MessageFactory;
+import it18zhang.java19.qq.common.ServerChatSingleBean;
+import it18zhang.java19.qq.util.Util;
 
 /**
  * Server端:  客户端消息的接受者
