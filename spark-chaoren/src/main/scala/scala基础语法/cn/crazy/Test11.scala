@@ -4,7 +4,6 @@ package scala基础语法.cn.crazy
  * 函数
  */
 object Test11 extends App{
-  //  println("hello world!")
 
   /*无返回值的函数*/
   //  def add(a:Int ,b:Int){
@@ -26,6 +25,10 @@ object Test11 extends App{
 //  2.调用函数的时候，我们可以给定参数名进行调用
   
   var c = add(b = 2 , a = 2) //给定参数名进行调用
+  var d = add(b = 2 , a = 2):Int //给定参数名进行调用
+  private val i: Int = add(3, 4)
   println(c)
-  
+  println(d)
+  println(i)
+
 }
