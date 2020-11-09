@@ -7,7 +7,7 @@ public class TeacherFactory {
 	private Map<String,Teacher> pool;
 	
 	public TeacherFactory() {
-		pool = new HashMap<String,Teacher>();
+		pool = new HashMap<>();
 	}
 	
 	public Teacher getTeacher(String number) {

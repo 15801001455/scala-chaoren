@@ -8,7 +8,7 @@ public class MyCharacterFactory {
 	private Map<Character,MyCharacter> pool;
 	
 	public MyCharacterFactory() {
-		pool = new HashMap<Character,MyCharacter>();
+		pool = new HashMap<>();
 	}
 	
 	public MyCharacter getMyCharacter(Character character) {
