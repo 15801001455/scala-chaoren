@@ -1,4 +1,4 @@
-package com.it18zhang.java23.jdbc;
+package it18zhang.java23.jdbc;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 

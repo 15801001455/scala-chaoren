@@ -1,4 +1,4 @@
-package com.it18zhang.java16;
+package it18zhang.java16;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,7 +9,7 @@ import org.junit.Test;
 /**
  * 测试递归输出文件夹
  */
-public class TestFileSplit {
+public class TestFileSplit{
 	
 	/**
 	 * 测试文件切片

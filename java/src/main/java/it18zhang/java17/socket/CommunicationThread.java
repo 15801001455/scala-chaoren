@@ -1,4 +1,4 @@
-package com.it18zhang.java17.socket;
+package it18zhang.java17.socket;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -1,4 +1,4 @@
-package com.it18zhang.java18;
+package it18zhang.java18;
 
 import java.io.IOException;
 import java.io.InputStream;

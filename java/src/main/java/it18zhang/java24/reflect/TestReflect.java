@@ -1,4 +1,4 @@
-package com.it18zhang.java24.reflect;
+package it18zhang.java24.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

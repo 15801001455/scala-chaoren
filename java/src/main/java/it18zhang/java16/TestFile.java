@@ -1,4 +1,4 @@
-package com.it18zhang.java16;
+package it18zhang.java16;
 
 import java.io.File;
 import java.io.FileInputStream;
