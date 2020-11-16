@@ -19,7 +19,7 @@ public class TestPreparedStatement {
 	private Connection getConn(){
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/big3" ;
+			String url = "jdbc:mysql://localhost:3306/chaolifang" ;
 			String user = "root";
 			String pass = "root" ;
 			
@@ -114,12 +114,12 @@ public class TestPreparedStatement {
 			conn = getConn();			//连接
 			conn.setAutoCommit(false);	//自动提交
 			//insert into users(name,age) values(?,?)					?是占位符
-			ppst = conn.prepareStatement("select * from users where name = ? and password = ?");
+			ppst = conn.prepareStatement("select * from t_book where name = ?");
 			
 			//绑定参数
-			ppst.setString(1, "1' or 1=1 -- ");
-			ppst.setString(2, "123456");
-			
+			ppst.setString(1, "3 or 1=1");
+			//ppst.setString(1, "3");
+
 			//执行查询
 			ResultSet rs = ppst.executeQuery();
 			while(rs.next()){
@@ -128,7 +128,7 @@ public class TestPreparedStatement {
 			conn.commit();
 			ppst.close();
 			conn.close();
-			System.out.println("insert over");
+			System.out.println("query over");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
