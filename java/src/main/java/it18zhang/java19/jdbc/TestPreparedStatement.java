@@ -117,7 +117,7 @@ public class TestPreparedStatement {
 			ppst = conn.prepareStatement("select * from t_book where name = ?");
 			
 			//绑定参数
-			ppst.setString(1, "3 or 1=1");
+			ppst.setString(1, "3' or '1'='1");//update jyc 20201116 合并完就是select * from t_book where name = '3' or '1'='1' 这就是典型的sql注入，但是prepareStatement可以避免这种错误
 			//ppst.setString(1, "3");
 
 			//执行查询
