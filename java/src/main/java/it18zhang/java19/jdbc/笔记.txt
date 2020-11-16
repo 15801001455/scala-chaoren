@@ -9,43 +9,6 @@ B/S
 	browser    / server.
 	ie|firefox / web server.(tomcat)
 
-SQL
------------------
-	structure query language.
-	insert into t(f1,f2,...) values(v1,v2,...) ;
-	delete from t where ...
-	update t set f1=v1,f2=v2 ,... where ...
-	select * from t ;
-	select id,name,... from t ;		//projection,投影查询
-
-
-
-JDBC
----------------
-	java database connection.
-	java数据库连接
-	规范(接口)。
-	Driver			//驱动程序
-	driverclass		//com.mysql.jdbc.Driver
-	url				//jdbc:mysql://localhost:3306/big3
-	username		//root
-	password		//root
-
-	//
-	Class.forName("com.mysql.jdbc.Driver");		//
-	conn = DriverManager.getConnection(...);	//
-	Statement st = conn.createStatement();		//语句
-	st.execute("delete from users where id < 4");//
-	st.close();
-
-
-
-
-sql
-----------------
-	select * from users order by id desc ;						//默认asc		
-	select * from users order by id asc,name desc,age asc ;		//
-	select * from users order by 1 asc,2 desc,3 asc ;			//
 
 事务性
 ----------------

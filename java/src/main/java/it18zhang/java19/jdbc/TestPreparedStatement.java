@@ -114,11 +114,12 @@ public class TestPreparedStatement {
 			conn = getConn();			//连接
 			conn.setAutoCommit(false);	//自动提交
 			//insert into users(name,age) values(?,?)					?是占位符
-			ppst = conn.prepareStatement("select * from t_book where name = ?");
+			ppst = conn.prepareStatement("select * from t_book where name = ? and passpword = ?");
 			
 			//绑定参数
-			ppst.setString(1, "3' or '1'='1");//update jyc 20201116 合并完就是select * from t_book where name = '3' or '1'='1' 这就是典型的sql注入，但是prepareStatement可以避免这种错误
+			ppst.setString(1, "3' or '1'='1 --");//update jyc 20201116 合并完就是select * from t_book where name = '3' or '1'='1' --and passpord='123456' 这就是典型的sql注入，但是prepareStatement可以避免这种错误
 			//ppst.setString(1, "3");
+			ppst.setString(2,"123456");
 
 			//执行查询
 			ResultSet rs = ppst.executeQuery();
