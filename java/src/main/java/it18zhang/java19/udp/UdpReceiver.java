@@ -1,4 +1,4 @@
-package com.it18zhang.java19.udp;
+package it18zhang.java19.udp;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

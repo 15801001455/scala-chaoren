@@ -46,7 +46,7 @@ public class Function1 {
     }
 
     // update jyc  <T,U,V> 这一部分应该没有顺序区分,只是在声明方法时定义一个或多个类型形参
-    public <T,U,V> T readFromCache(Function<U,T> service,U param) throws Exception {
+    public <T,U> T readFromCache(Function<U,T> service,U param) throws Exception {
         T apply = service.apply(param);
         if(apply!=null){
             return apply;

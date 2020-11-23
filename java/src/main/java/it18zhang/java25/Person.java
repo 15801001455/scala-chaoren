@@ -1,4 +1,4 @@
-package com.it18zhang.java25;
+package it18zhang.java25;
 
 /**
  * 

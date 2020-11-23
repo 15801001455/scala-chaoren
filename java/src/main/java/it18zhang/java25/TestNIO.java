@@ -1,4 +1,4 @@
-package com.it18zhang.java25.nio;
+package it18zhang.java25;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

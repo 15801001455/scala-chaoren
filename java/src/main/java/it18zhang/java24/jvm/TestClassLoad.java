@@ -1,4 +1,4 @@
-package com.it18zhang.java24.jvm;
+package it18zhang.java24.jvm;
 
 /**
  * 测试类加载
@@ -7,7 +7,7 @@ public class TestClassLoad {
 	
 	public static void main(String[] args) throws Exception {
 		
-		Class.forName("com.it18zhang.java24.jvm.Person", false, TestClassLoad.class.getClassLoader());
+		Class.forName("it18zhang.java24.jvm.Person", false, TestClassLoad.class.getClassLoader());
 //		Person p = new Person();
 //		p = new Person();
 //		p = new Person();

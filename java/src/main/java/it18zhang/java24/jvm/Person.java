@@ -1,4 +1,4 @@
-package com.it18zhang.java24.jvm;
+package it18zhang.java24.jvm;
 
 /**
  * 

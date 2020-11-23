@@ -5,9 +5,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
+import it18zhang.java25.Person;
 import org.junit.Test;
-
-import com.it18zhang.java24.jvm.Person;
 
 public class TestReflect {
 	/**

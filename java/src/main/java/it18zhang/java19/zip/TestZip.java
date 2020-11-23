@@ -1,4 +1,4 @@
-package com.it18zhang.java19.zip;
+package it18zhang.java19.zip;
 
 import java.awt.Rectangle;
 import java.awt.Robot;
