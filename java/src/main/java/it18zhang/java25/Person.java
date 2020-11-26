@@ -14,7 +14,7 @@ public class Person{
 	public Person() {
 	}
 
-	public boolean isMarried() {
+	public boolean getMarried() {
 		return married;
 	}
 
