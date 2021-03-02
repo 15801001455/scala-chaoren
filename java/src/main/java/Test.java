@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Test {
 
@@ -19,76 +20,48 @@ public class Test {
         return scaleNumber.stripTrailingZeros().toPlainString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(4 & 1 + 4 + 16 + 32);
-
-        BigDecimal bb = new BigDecimal("1257.5");
-        String s1 = bigDecimal2StringNoZero(bb, 2);
-
-        System.out.println(s1); //111231.56
-
-
-        Long lon = 0L;
-        System.out.println(lon != 0);
-
-
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.MONTH,6);
-        System.out.println(c.getTime());
-
-        BigDecimal num = new BigDecimal("10000.12");
-        System.out.println(bigDecimal2StringNoZero(num,4));
-
-
-
-        boolean flag1 = false;
-        System.out.println(flag1 + "");
-
-
-        String str2 = "a|2,b|3";
-        String str3 = "a|2";
-        System.out.println(str2.contains("b|3"));
-        String[] split2 = str3.split("\\|");
-        System.out.println(split2[0]);
-        System.out.println(split2[1]);
-
-        String b = null;
-        System.out.println("1".equals(b));
-        //System.out.println(b== 1);
-        System.out.println(aaa("2.34556"));
-        System.out.println(aaa("0.234"));
-        System.out.println(aaa("3"));
-        System.out.println(aaa("-3"));
-
-        System.out.println("-----------------------------------------");
-        DecimalFormat df = new DecimalFormat("0.00");
-        System.out.println(df.format(Double.valueOf("2.34556")));
-
-        BigDecimal dealPrice = new BigDecimal("0.354");
-        System.out.println(dealPrice.toString());
-        BigDecimal aaa = new BigDecimal(df.format(Double.valueOf(dealPrice.toString())));
-        System.out.println(aaa.toString());
-
-        Double loanAmount = new Double("0.00");
-        System.out.println(loanAmount.compareTo(0D) <=0);
-
-        String str = "a^b|c^d";
-        String[] split = str.split("\\|");
-        for(String sp : split){
-            //System.out.println(sp);
-            String[] split1 = sp.split("\\^");
-            for(String s : split1){
-                System.out.println(s);
-            }
-
+    public static void testCycle(){
+        for(int i=0;i<3;i++){
+            System.out.println(i);
         }
 
-        String a = "a,b,c|bcd|";
-        a = a.substring(0,a.lastIndexOf("|"));
-        System.out.println(a);
+        for(int i=3-1;i>=0;i--){
+            System.out.println(i);
+        }
+    }
 
-        DecimalFormat decimalFormat = new DecimalFormat("###################.###########");
-        System.out.println(bigDecimal2String("2", 4));
+    static List<Integer> deleteList = new ArrayList<>();
+
+    public static Integer getNum(List<Integer> a,List<Integer> origal){
+        if(!origal.contains(1)){
+            return 1;
+        }
+        //缩小查询范围 负数和重复的数字先去掉  可以得到1,2,4,7,100,1000 或者这种数 3,6,7,10,100  1,4,6
+        List<Integer> args = a.stream().distinct().filter(t -> t > 0).sorted().collect(Collectors.toList());
+        Integer max = Integer.MAX_VALUE;
+        for(Integer i : args){
+            if(i < max){
+                max = i;
+            }
+        }
+        //System.out.println(max);
+        if(max-1 > 0 && !origal.contains(max-1)){
+            return max-1;
+        }
+        if(!origal.contains(max+1)){
+            return max+1;
+        }
+        args.remove(new Integer(max));
+        return getNum(args,origal);
+    }
+
+    public static void main(String[] args) {
+        //List<Integer> aa = Arrays.asList(-1,0,1,2,3,3,4,7,8);
+        //List<Integer> aa = Arrays.asList(-1,0,7,9,Integer.MAX_VALUE);
+        List<Integer> aa = Arrays.asList(Integer.MIN_VALUE,0,1,4,7,9,Integer.MAX_VALUE);
+        Integer ss = getNum(aa,aa);//找最小的不在范围内的正整数
+        System.out.println(ss);
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
     }
 
     @org.junit.Test
