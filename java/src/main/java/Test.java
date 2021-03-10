@@ -1,3 +1,5 @@
+import org.joda.time.DateTime;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -11,6 +13,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Test {
+
+
 
     public final static String bigDecimal2StringNoZero(BigDecimal number, Integer length) {
         if (number == null) {
@@ -30,21 +34,13 @@ public class Test {
         }
     }
 
-    static List<Integer> deleteList = new ArrayList<>();
-
     public static Integer getNum(List<Integer> a,List<Integer> origal){
         if(!origal.contains(1)){
             return 1;
         }
         //缩小查询范围 负数和重复的数字先去掉  可以得到1,2,4,7,100,1000 或者这种数 3,6,7,10,100  1,4,6
         List<Integer> args = a.stream().distinct().filter(t -> t > 0).sorted().collect(Collectors.toList());
-        Integer max = Integer.MAX_VALUE;
-        for(Integer i : args){
-            if(i < max){
-                max = i;
-            }
-        }
-        //System.out.println(max);
+        Integer max = args.get(0);
         if(max-1 > 0 && !origal.contains(max-1)){
             return max-1;
         }
@@ -56,6 +52,9 @@ public class Test {
     }
 
     public static void main(String[] args) {
+        System.out.println(Integer.valueOf("03"));
+        System.out.println(DateTime.now().getYear());
+        System.out.println(DateTime.now().minusYears(1).getYear());
         //List<Integer> aa = Arrays.asList(-1,0,1,2,3,3,4,7,8);
         //List<Integer> aa = Arrays.asList(-1,0,7,9,Integer.MAX_VALUE);
         List<Integer> aa = Arrays.asList(Integer.MIN_VALUE,0,1,4,7,9,Integer.MAX_VALUE);
