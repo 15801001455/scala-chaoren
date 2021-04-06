@@ -124,7 +124,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.24</version>
+            <version>1.2.25</version>
         </dependency>
         <!--主要是让maven下载最新包，要不build-plugins总是找不到版本,一会下载完包注释掉就可以了 下面三个-->
         <dependency>
